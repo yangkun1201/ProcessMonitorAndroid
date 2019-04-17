@@ -21,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
     Button scanBtn;
     String account;
 
+    String ip = "http://39.108.95.162:8080/MonitorService/";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         OkHttpClient client = new OkHttpClient();
         Request request = new Request.Builder()
                 .get()
-                .url("http://192.168.31.238:8080/loginByQrCode?account="+account+"&uuid="+uuid)
+                .url(ip+"loginByQrCode?account="+account+"&uuid="+uuid)
                 .build();
         Call call = client.newCall(request);
         call.enqueue(new Callback() {
