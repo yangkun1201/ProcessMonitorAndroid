@@ -35,6 +35,8 @@ public class LoginActivity extends AppCompatActivity {
     EditText passwordEdit;
     Button okButton;
 
+    String ip = "http://39.108.95.162:8080/MonitorService/";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -80,7 +82,7 @@ public class LoginActivity extends AppCompatActivity {
         RequestBody requestBody = RequestBody.create(MediaType.parse("application/json; charset=utf-8"),paramsInJson);
         final Request request = new Request.Builder()
                 .post(requestBody)
-                .url("http://192.168.31.238:8080/login")
+                .url(ip+"login")
                 .build();
 
         Call call = client.newCall(request);
