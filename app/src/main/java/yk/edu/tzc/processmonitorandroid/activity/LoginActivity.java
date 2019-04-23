@@ -1,4 +1,4 @@
-package yk.edu.tzc.processmonitorandroid;
+package yk.edu.tzc.processmonitorandroid.activity;
 
 import android.Manifest;
 import android.content.Intent;
@@ -28,6 +28,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
+import yk.edu.tzc.processmonitorandroid.R;
 
 public class LoginActivity extends AppCompatActivity {
 

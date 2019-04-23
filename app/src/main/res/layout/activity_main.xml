@@ -5,13 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="yk.edu.tzc.processmonitorandroid.MainActivity">
+    tools:context="yk.edu.tzc.processmonitorandroid.activity.MainActivity">
 
     <Button
         android:id="@+id/scan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="扫一扫"
+        android:layout_gravity="center_horizontal"/>
+
+    <Button
+        android:id="@+id/upload_face_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="上传人脸数据"
         android:layout_gravity="center_horizontal"/>
 
 </LinearLayout>

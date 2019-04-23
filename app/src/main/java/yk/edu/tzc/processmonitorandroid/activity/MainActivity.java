@@ -1,4 +1,4 @@
-package yk.edu.tzc.processmonitorandroid;
+package yk.edu.tzc.processmonitorandroid.activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -14,11 +14,13 @@ import okhttp3.Callback;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
+import yk.edu.tzc.processmonitorandroid.R;
 
 
 public class MainActivity extends AppCompatActivity {
 
     Button scanBtn;
+    Button faceBtn;
     String account;
 
     String ip = "http://39.108.95.162:8080/MonitorService/";
@@ -29,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         scanBtn = ((Button) findViewById(R.id.scan));
+        faceBtn = ((Button) findViewById(R.id.upload_face_id));
         Intent intent = getIntent();
         account = intent.getStringExtra("account");
 
@@ -39,13 +42,22 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(intent,1);
             }
         });
+
+        faceBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1 = new Intent(MainActivity.this,FaceActivity.class);
+                intent1.putExtra("account",account);
+                startActivity(intent1);
+            }
+        });
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if(requestCode == 1 && resultCode ==1){
             String uuid = data.getStringExtra("uuid");
-            //先服务端绑定account和uuid
+            //向服务端绑定account和uuid
             bindAccounAndUuid(account,uuid);
         }
     }

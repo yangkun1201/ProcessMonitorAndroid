@@ -1,4 +1,4 @@
-package yk.edu.tzc.processmonitorandroid;
+package yk.edu.tzc.processmonitorandroid.activity;
 
 import android.Manifest;
 import android.content.Intent;
@@ -9,9 +9,10 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.mei_husky.library.view.QRCodeScannerView;
+
+import yk.edu.tzc.processmonitorandroid.R;
 
 public class ScanActivity extends AppCompatActivity {
 
